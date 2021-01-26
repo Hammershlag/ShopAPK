@@ -1,5 +1,7 @@
 package com.example.shopapk.Activities.Admin;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -7,6 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import com.example.shopapk.Activities.SignUpActivity;
 import com.example.shopapk.Classes.Product;
 import com.example.shopapk.Database.DatabaseHandler;
 import com.example.shopapk.R;
@@ -17,6 +20,7 @@ public class AdminActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        final Context context = this;
         final DatabaseHandler db = new DatabaseHandler(this);
 
             setContentView(R.layout.admin_buying_activity);
@@ -89,6 +93,13 @@ public class AdminActivity extends AppCompatActivity {
                                 pr.getDescription();
                         Log.d("Name: ", log);
                     }
+                }
+            });
+            findViewById(R.id.pr_list).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, ProductListActivity.class);
+                    startActivity(intent);
                 }
             });
             //list of all products
