@@ -11,7 +11,26 @@
         </key>
         <value>
           <db-info>
-            <option name="fingerprint" value="2021-01-26 14:29:16384" />
+            <option name="fingerprint" value="2021-01-26 20:15:16384" />
+            <option name="referringProjects">
+              <set>
+                <option value="$USER_HOME$/OneDrive/Pulpit/pr/ShopAPK" />
+              </set>
+            </option>
+          </db-info>
+        </value>
+      </entry>
+      <entry>
+        <key>
+          <db-key>
+            <option name="deviceId" value="SERIAL_NUMBER_ccbb154" />
+            <option name="packageName" value="com.example.shopapk" />
+            <option name="databaseName" value="userManager" />
+          </db-key>
+        </key>
+        <value>
+          <db-info>
+            <option name="fingerprint" value="2021-01-26 21:20:16384" />
             <option name="referringProjects">
               <set>
                 <option value="$USER_HOME$/OneDrive/Pulpit/pr/ShopAPK" />
