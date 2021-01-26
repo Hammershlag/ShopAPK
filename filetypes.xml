@@ -9,6 +9,7 @@
       <mapping pattern="GodSave_V8_TeraDudee" type="PLAIN_TEXT" />
       <mapping ext="sfk" type="PLAIN_TEXT" />
       <mapping ext="sav" type="PLAIN_TEXT" />
+      <mapping ext="sqlite" type="PLAIN_TEXT" />
       <mapping ext="exe" type="PLAIN_TEXT" />
       <removed_mapping ext="apk" approved="true" type="ARCHIVE" />
       <removed_mapping ext="psd" approved="true" type="Image" />
