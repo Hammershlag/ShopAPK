@@ -20,6 +20,8 @@ public class Data{
     public static String adres;
     public static int ctr = 0;
 
+    int gitTest = 0;
+
     public static boolean isValidEmail(String email) {
         String regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
         return email.matches(regex);
