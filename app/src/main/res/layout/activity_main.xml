@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+               tools:context=".Activities.MainActivity"
+                android:orientation="vertical">
+
+    <TextView
+            android:id="@+id/textview1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/hello_world" />
+    <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar"
+            android:layout_marginBottom="-42dp" android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/textview1" android:layout_marginEnd="1dp"/>
+
+    <fragment
+            class="com.here.android.mpa.mapping.AndroidXMapFragment"
+            android:id="@+id/mapfragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="24dp"
+            android:layout_below="@+id/textview1"/>
+    <Button
+            android:text="Request Location"
+            android:id="@+id/reqlocation"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="143dp"
+            android:layout_above="@+id/textview1"
+            android:layout_marginBottom="281dp"/>
+    <Button
+            android:text="Log out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/logoutbutton"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="674dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="313dp"/>
+    <Button
+            android:text="Settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/settings_button"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="24dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="668dp"/>
+    <Button
+            android:text="Pass data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/passdatabutton" android:layout_alignParentBottom="true"
+            android:layout_marginBottom="550dp" android:layout_alignParentEnd="true" android:layout_marginEnd="172dp"/>
+
+
+</RelativeLayout>

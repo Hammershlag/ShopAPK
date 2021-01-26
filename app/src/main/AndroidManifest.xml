@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.example.shopapk">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission. ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <application
+                android:allowBackup="true"
+                android:icon="@mipmap/ic_launcher_round"
+                android:label="@string/app_name"
+                android:supportsRtl="true"
+                android:theme="@style/AppTheme"
+                android:hardwareAccelerated="true">
+        <meta-data android:name="com.here.android.maps.appid" android:value="B0BxGxQpiiWWdFv9geWM"/>
+        <meta-data android:name="com.here.android.maps.apptoken" android:value="liC_TB67hT3lYUuDPZnXgQ"/>
+        <meta-data android:name="com.here.android.maps.license.key" android:value="eWVAbHihuWeYijszMLt1nOPPFkNfYkDc+dEnv9qK5fRDAOGSMAvLppeBaMmX/Vz5uZ7Lzok/RrTVtQP/k0Pdd/MazkwYPIlB8xbQPxjgmFEviJxCDz40FldwSYIMcoHVz7nRhMbd3/g2eLRVisoTQgzJs62NmtBWsUMQfZC099MRqYF5QFd7r1aGxGGx4j2wrdz2DED/veYAHvNG3pesxhx5pmBExQyFl3QT6K5mF1KWgU128D2TpKP1pw7Y0SeovD4aAtlDy4spCW/URyCzrahZm0nfvaphYmeGU+ky1vA9uWl1wAPq1MYx2ZN3L2bRqWv+lVAhJj3uwKcOawbQGsnfIZUxs6GTx48fQvQEwcLJgudQ9PVLw2fduBVfET+WcTDlElntYFVNMv+sjdwyZhhbpsAtS2P46m1uDnefBk2W7Uk5CVUYYKPDDk5KnNOMJ7VwzXcJR5LZOTnQgrJ09h8ClhO2oW/2qbzEiWa6CcYIMYB95wGGcX3hhK8HVOd+Qc6RW583TMfyFN9LS9vKJz06wTFKjAeLJfDI3UrPmQhIf7zY0j4V7UNloG3s5r3jRQJPG0MaJJ6k+OyvRDkLPWTq8DHBSiZeJEAvmzeIFjO7BKf1YmzUmbZyGG9rDL7TMUFDNkW+A2y7KAT8MsFRAx5Vz9GbTFc4nHSjl/tvG2E="/>
+        <activity
+                    android:name="com.example.shopapk.Activities.MainActivity"
+                    android:label="@string/app_name" >
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN" />
+
+                    <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+            </activity>
+        <activity
+                android:name=".Activities.LoginActivity">
+        </activity>
+        <activity
+                android:name=".Activities.SignUpActivity">
+        </activity>
+        <activity
+                android:name=".Activities.Settings.SettingsActivity">
+        </activity>
+        <activity
+                android:name=".Activities.Settings.ChangePasswordActivity">
+        </activity>
+        <activity
+                android:name=".Activities.Settings.UserInfoActivity">
+        </activity>
+        <activity
+                android:name=".Activities.BuyingActivity">
+        </activity>
+        <activity
+                android:name=".Activities.Admin.AdminActivity">
+        </activity>
+        </application>
+    </manifest>
