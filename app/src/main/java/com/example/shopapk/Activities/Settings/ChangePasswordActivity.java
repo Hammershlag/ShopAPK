@@ -27,10 +27,9 @@ public class ChangePasswordActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                System.out.println("clicked");
-                EditText old_pass = (EditText) findViewById(R.id.oldpassword);
-                EditText new_pass = (EditText) findViewById(R.id.newpassword);
-                EditText new_pass_confirmation = (EditText) findViewById(R.id.newpasswordconfirmation);
+                EditText old_pass = findViewById(R.id.oldpassword);
+                EditText new_pass = findViewById(R.id.newpassword);
+                EditText new_pass_confirmation = findViewById(R.id.newpasswordconfirmation);
 
 
                 if (TextUtils.equals(old_pass.getText(), current_user.getPassword()))
@@ -39,8 +38,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
                     {
                         if (TextUtils.equals(new_pass.getText(), new_pass_confirmation.getText()))
                         {
-                            System.out.println("working");
-                            users[current_user_number].setPassword(new_pass.getText().toString());
+                            current_user.setPassword(new_pass.getText().toString());
                             Intent intent = new Intent(context, LoginActivity.class);
                             startActivity(intent);
                         }

@@ -12,9 +12,6 @@ public class Data{
     public static double lon = 0.0;
     public static GeoCoordinate currentLocation;
     public static int count = 0;
-    public static Product pr = new Product(921931, ".$.$.", "...");
-    public static Product products[] = {};
-    public static User users[] = {new User("admin", "admin"), new User("tomekzbroszczyk@gmail.com", "asdfasdf")};
     public static User current_user;
     public static int current_user_number;
     public static String adres;
@@ -25,17 +22,4 @@ public class Data{
         return email.matches(regex);
     }
 
-    public static User[] addElementToUsersArray(User elementToAdd) {
-        User[] destArray = Arrays.copyOf(users, users.length + 1);
-        destArray[destArray.length - 1] = elementToAdd;
-        users = destArray;
-        return users;
-    }
-
-    public static Product[] addElementToProductsArray(Product elementToAdd) {
-        Product[] destArray = Arrays.copyOf(products, users.length + 1);
-        destArray[destArray.length - 1] = elementToAdd;
-        products = destArray;
-        return products;
-    }
 }

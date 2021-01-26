@@ -9,9 +9,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.shopapk.Activities.SignUpActivity;
 import com.example.shopapk.Classes.Product;
-import com.example.shopapk.Database.DatabaseHandler;
+import com.example.shopapk.Database.ProductsDatabaseHandler;
 import com.example.shopapk.R;
 
 import java.util.List;
@@ -21,7 +20,7 @@ public class AdminActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         final Context context = this;
-        final DatabaseHandler db = new DatabaseHandler(this);
+        final ProductsDatabaseHandler db = new ProductsDatabaseHandler(this);
 
             setContentView(R.layout.admin_buying_activity);
             final TextView test = findViewById(R.id.testTextView);
