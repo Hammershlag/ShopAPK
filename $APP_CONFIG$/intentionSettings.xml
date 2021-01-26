@@ -1,0 +1,6 @@
+<application>
+  <component name="IntentionManagerSettings">
+    <ignoreAction name="Java/Numbers/Convert number" />
+    <ignoreAction name="Java/Modifiers/Change access modifier" />
+  </component>
+</application>
