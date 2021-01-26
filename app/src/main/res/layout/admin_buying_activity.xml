@@ -74,4 +74,11 @@
             android:layout_height="47dp" android:id="@+id/remove_product"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="340dp" android:layout_marginEnd="28dp"/>
+    <Button
+            android:text="List"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/pr_list"
+            app:layout_constraintBottom_toTopOf="@+id/testTextView"
+            android:layout_marginBottom="64dp" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="160dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
