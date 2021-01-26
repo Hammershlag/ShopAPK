@@ -1,14 +1,12 @@
 package com.example.shopapk.Activities.Admin;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.shopapk.Classes.Product;
-import com.example.shopapk.Database.DatabaseHandler;
+import com.example.shopapk.Database.ProductsDatabaseHandler;
 import com.example.shopapk.R;
 
 import java.util.ArrayList;
@@ -23,7 +21,7 @@ public class ProductListActivity extends AppCompatActivity {
     String[] pr_name = new String[100];
     String[] pr_des = new String[100];
     String[] pr_id = new String[100];
-    final DatabaseHandler db = new DatabaseHandler(this);
+    final ProductsDatabaseHandler db = new ProductsDatabaseHandler(this);
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
