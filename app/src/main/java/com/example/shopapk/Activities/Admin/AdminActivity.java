@@ -101,6 +101,15 @@ public class AdminActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
-            //list of all products
+            findViewById(R.id.remove_all).setOnClickListener(new View.OnClickListener() {
+                List<Product> products = db.getAllProducts();
+                @Override
+                public void onClick(View v) {
+                    for (Product pr : products)
+                    {
+                        db.deleteProduct(pr);
+                    }
+                }
+            });
         }
     }
