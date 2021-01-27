@@ -1,25 +1,29 @@
 package com.example.shopapk.Database;
 
+import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.icu.math.BigDecimal;
+import android.os.Build;
+import androidx.annotation.RequiresApi;
 import com.example.shopapk.Classes.Product;
 import com.example.shopapk.Classes.User;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDatabaseHandler extends SQLiteOpenHelper {
+public class CurrentUserDatabaseHandler extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "userManager";
-    private static final String TABLE_PRODUCTS = "users";
+    private static final String DATABASE_NAME = "CurrentUserManager";
+    private static final String TABLE_PRODUCTS = "CurrentUser";
     private static final String KEY_ID = "id";
     private static final String KEY_LOGIN = "login";
     private static final String KEY_PASS = "password";
 
-    public UserDatabaseHandler(Context context) {
+    public CurrentUserDatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
@@ -110,4 +114,15 @@ public class UserDatabaseHandler extends SQLiteOpenHelper {
         return cursor.getCount();
     }
 
+    public boolean isEmpty() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        boolean empty = true;
+        Cursor cur = db.rawQuery("SELECT COUNT(*) FROM " + TABLE_PRODUCTS, null);
+        if (cur != null && cur.moveToFirst()) {
+            empty = (cur.getInt (0) == 0);
+        }
+        cur.close();
+
+        return empty;
+    }
 }

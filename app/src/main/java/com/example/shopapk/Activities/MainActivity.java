@@ -12,6 +12,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.shopapk.Activities.Admin.AdminActivity;
 import com.example.shopapk.Activities.Settings.SettingsActivity;
+import com.example.shopapk.Classes.Product;
+import com.example.shopapk.Classes.User;
+import com.example.shopapk.Database.CurrentUserDatabaseHandler;
 import com.example.shopapk.R;
 import com.here.android.mpa.common.*;
 import com.here.android.mpa.mapping.*;
@@ -33,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     boolean aBoolean = true;
     final Context context = this;
     GeoCoordinate geoCoordinate;
+    CurrentUserDatabaseHandler cdb = new CurrentUserDatabaseHandler(this);
 
 
     @Override
@@ -102,6 +106,11 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         findViewById(R.id.logoutbutton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                List<User> rem_users = cdb.getAllUsers();
+                for (User rem_us : rem_users)
+                {
+                    cdb.deleteUser(rem_us);
+                }
                 Intent intent = new Intent(context, LoginActivity.class);
                 startActivity(intent);
             }
