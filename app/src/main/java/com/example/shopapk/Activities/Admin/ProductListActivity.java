@@ -18,9 +18,9 @@ public class ProductListActivity extends AppCompatActivity {
     ArrayList<HashMap<String, String>> mylist, mylist_title;
     ListAdapter adapter_title, adapter;
     HashMap<String, String> map1, map2;
-    String[] pr_name = new String[100];
-    String[] pr_des = new String[100];
-    String[] pr_id = new String[100];
+    String[] pr_name = new String[100000];
+    String[] pr_des = new String[100000];
+    String[] pr_id = new String[100000];
     final ProductsDatabaseHandler db = new ProductsDatabaseHandler(this);
 
     protected void onCreate(Bundle savedInstanceState) {
