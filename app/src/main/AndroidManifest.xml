@@ -51,5 +51,8 @@
         <activity
                 android:name=".Activities.Admin.ProductListActivity">
         </activity>
+        <activity
+                android:name=".Activities.Settings.UserInfoSettingsActivity">
+        </activity>
         </application>
     </manifest>

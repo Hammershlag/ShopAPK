@@ -26,5 +26,11 @@
             app:layout_constraintTop_toBottomOf="@+id/changepasswordbutton"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"/>
+    <Button
+            android:text="Change user info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/change_user_info"
+            app:layout_constraintTop_toBottomOf="@+id/userinfobutton" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="44dp" android:layout_marginStart="16dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -35,5 +35,13 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.change_user_info).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, UserInfoSettingsActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

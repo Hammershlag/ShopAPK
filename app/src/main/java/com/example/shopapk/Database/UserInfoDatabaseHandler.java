@@ -92,6 +92,27 @@ public class UserInfoDatabaseHandler extends SQLiteOpenHelper {
         return userList;
     }
 
+    public void updateName(UserInfo user, String name)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String updateQuery = "UPDATE " + TABLE_PRODUCTS + " SET " + KEY_NAME + " = \' " + name + " \' WHERE ID = " + user.getId() +" ;";
+        db.execSQL(updateQuery);
+    }
+
+    public void updateSurame(UserInfo user, String surname)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String updateQuery = "UPDATE " + TABLE_PRODUCTS + " SET " + KEY_SURNAME + " = \' " + surname + " \' WHERE ID = " + user.getId() +" ;";
+        db.execSQL(updateQuery);
+    }
+
+    public void updatePhoneNumber(UserInfo user, String phone_number)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String updateQuery = "UPDATE " + TABLE_PRODUCTS + " SET " + KEY_PH + " = \' " + phone_number + " \' WHERE ID = " + user.getId() +" ;";
+        db.execSQL(updateQuery);
+    }
+
     public int updateUser(UserInfo user) {
         SQLiteDatabase db = this.getWritableDatabase();
 
