@@ -16,6 +16,8 @@ public class Data{
     public static int current_user_number;
     public static String adres;
     public static int ctr = 0;
+    public static boolean check_log = false;
+
 
     public static boolean isValidEmail(String email) {
         String regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";

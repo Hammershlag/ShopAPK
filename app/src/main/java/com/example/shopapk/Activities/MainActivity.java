@@ -14,6 +14,7 @@ import com.example.shopapk.Activities.Admin.AdminActivity;
 import com.example.shopapk.Activities.Settings.SettingsActivity;
 import com.example.shopapk.Classes.Product;
 import com.example.shopapk.Classes.User;
+import com.example.shopapk.Data.Data;
 import com.example.shopapk.Database.CurrentUserDatabaseHandler;
 import com.example.shopapk.R;
 import com.here.android.mpa.common.*;
@@ -39,11 +40,23 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     CurrentUserDatabaseHandler cdb = new CurrentUserDatabaseHandler(this);
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        if (!cdb.isEmpty())
+        {
+            check_log = true;
+            count++;
+            List<User> rem_user = cdb.getAllUsers();
+            cdb.getAllUsers();
+            User us = rem_user.get(0);
+            current_user = us;
+            current_user_number = us.getId();
+
+        }
 
         if (count == 0) {
             Intent intent = new Intent(context, LoginActivity.class);
