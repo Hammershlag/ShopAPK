@@ -25,7 +25,6 @@ public class LoginActivity extends AppCompatActivity {
     UserDatabaseHandler db = new UserDatabaseHandler(this);
     CurrentUserDatabaseHandler cdb = new CurrentUserDatabaseHandler(this);
     private Context context = this;
-    private boolean check_log = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
