@@ -5,29 +5,33 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import com.example.shopapk.Classes.Product;
-import com.example.shopapk.Classes.User;
+import com.example.shopapk.Classes.UserInfo;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDatabaseHandler extends SQLiteOpenHelper {
+public class UserInfoDatabaseHandler extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "userManager";
-    private static final String TABLE_PRODUCTS = "users";
+    private static final String DATABASE_NAME = "infoManager";
+    private static final String TABLE_PRODUCTS = "userInfo";
     private static final String KEY_ID = "id";
     private static final String KEY_LOGIN = "login";
-    private static final String KEY_PASS = "password";
+    private static final String KEY_NAME = "name";
+    private static final String KEY_SURNAME = "surname";
+    private static final String KEY_PH = "phone_nr";
 
-    public UserDatabaseHandler(Context context) {
+    public UserInfoDatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String CREATE_PRODUCTS_TABLE = "CREATE TABLE " + TABLE_PRODUCTS + "("
-                + KEY_ID + " INTEGER PRIMARY KEY," + KEY_LOGIN + " TEXT,"
-                + KEY_PASS + " TEXT" + ")";
+        String CREATE_PRODUCTS_TABLE = "CREATE TABLE " + TABLE_PRODUCTS + " ("
+                + KEY_ID + " INTEGER, "
+                + KEY_LOGIN + " TEXT, "
+                + KEY_NAME + " TEXT, "
+                + KEY_SURNAME + " TEXT, "
+                + KEY_PH + " TEXT " + " ) ";
         db.execSQL(CREATE_PRODUCTS_TABLE);
     }
 
@@ -38,33 +42,36 @@ public class UserDatabaseHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void addUser(User user) {
+    public void addUser(UserInfo user) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
+        values.put(KEY_ID, user.getId());
         values.put(KEY_LOGIN, user.getUsername());
-        values.put(KEY_PASS, user.getPassword());
+        values.put(KEY_NAME, user.getName());
+        values.put(KEY_SURNAME, user.getSurname());
+        values.put(KEY_PH, user.getPhone_number());
 
         db.insert(TABLE_PRODUCTS, null, values);
         db.close();
     }
 
-    public User getUser(int id) {
+    public UserInfo getUser(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(TABLE_PRODUCTS, new String[] { KEY_ID,
-                        KEY_LOGIN, KEY_PASS }, KEY_ID + "=?",
+                        KEY_LOGIN, KEY_NAME, KEY_SURNAME, KEY_PH }, KEY_ID + "=?",
                 new String[] { String.valueOf(id) }, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
 
-        User user = new User(Integer.parseInt(cursor.getString(0)),
-                cursor.getString(1), cursor.getString(2));
+        UserInfo user = new UserInfo(Integer.parseInt(cursor.getString(0)),
+                cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4));
         return user;
     }
 
-    public List<User> getAllUsers() {
-        List<User> userList = new ArrayList<User>();
+    public List<UserInfo> getAllUsers() {
+        List<UserInfo> userList = new ArrayList<UserInfo>();
         String selectQuery = "SELECT  * FROM " + TABLE_PRODUCTS;
 
         SQLiteDatabase db = this.getWritableDatabase();
@@ -72,10 +79,12 @@ public class UserDatabaseHandler extends SQLiteOpenHelper {
 
         if (cursor.moveToFirst()) {
             do {
-                User user = new User();
+                UserInfo user = new UserInfo();
                 user.setId(Integer.parseInt(cursor.getString(0)));
                 user.setUsername(cursor.getString(1));
-                user.setPassword(cursor.getString(2));
+                user.setName(cursor.getString(2));
+                user.setSurname(cursor.getString(3));
+                user.setPhone_number(cursor.getString(3));
                 userList.add(user);
             } while (cursor.moveToNext());
         }
@@ -83,18 +92,20 @@ public class UserDatabaseHandler extends SQLiteOpenHelper {
         return userList;
     }
 
-    public int updateUser(User user) {
+    public int updateUser(UserInfo user) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
         values.put(KEY_LOGIN, user.getUsername());
-        values.put(KEY_PASS, user.getPassword());
+        values.put(KEY_NAME, user.getName());
+        values.put(KEY_SURNAME, user.getSurname());
+        values.put(KEY_PH, user.getPhone_number());
 
         return db.update(TABLE_PRODUCTS, values, KEY_ID + " = ?",
                 new String[] { String.valueOf(user.getId()) });
     }
 
-    public void deleteUser(User user) {
+    public void deleteUser(UserInfo user) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_PRODUCTS, KEY_ID + " = ?",
                 new String[] { String.valueOf(user.getId()) });
@@ -109,6 +120,7 @@ public class UserDatabaseHandler extends SQLiteOpenHelper {
 
         return cursor.getCount();
     }
+
     public boolean isEmpty() {
         SQLiteDatabase db = this.getReadableDatabase();
         boolean empty = true;
@@ -120,5 +132,4 @@ public class UserDatabaseHandler extends SQLiteOpenHelper {
 
         return empty;
     }
-
 }
