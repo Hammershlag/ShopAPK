@@ -17,8 +17,7 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
 
-        //TODO Dark mode
-        Switch darkModeSwitch = (Switch) findViewById(R.id.dark_mode_settings);
+        Switch darkModeSwitch = findViewById(R.id.dark_mode_settings);
         Boolean darmModeState = darkModeSwitch.isSelected();
 
         findViewById(R.id.changepasswordbutton).setOnClickListener(new View.OnClickListener() {
