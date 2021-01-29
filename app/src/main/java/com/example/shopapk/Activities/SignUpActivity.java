@@ -2,6 +2,7 @@ package com.example.shopapk.Activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -41,19 +42,21 @@ public class SignUpActivity extends AppCompatActivity {
                 {
                     if(isValidEmail(value) && TextUtils.equals(pass1.getText(), pass2.getText()) && reg_checkbox.isChecked())
                     {
+                        User new_user = new User(value, pass1.getText().toString());
                         List<User> userList = db.getAllUsers();
                         boolean check_user = false;
-                        for (User user : userList)
-                        {
-                            if (value.equals(user.getUsername()))
-                            {
-                                check_user = true;
-                            }
-
-                        }
+//                        for (User user : userList)
+//                        {
+//                            if (value.equals(user.getUsername()))
+//                            {
+//                                check_user = true;
+//                            }
+//
+//                        }
+                        check_user = db.checkIfUserExists(new_user);
                         if (!check_user)
                         {
-                            db.addUser(new User(value, pass1.getText().toString()));
+                            db.addUser(new_user);
                             Intent intent = new Intent(context, LoginActivity.class);
                             startActivity(intent);
                         }
@@ -80,4 +83,5 @@ public class SignUpActivity extends AppCompatActivity {
         });
 
     }
+
 }

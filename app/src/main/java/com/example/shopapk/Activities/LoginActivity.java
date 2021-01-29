@@ -30,19 +30,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
 
-        if (!cdb.isEmpty())
-        {
-            check_log = true;
-            count++;
-            List<User> rem_user = cdb.getAllUsers();
-            cdb.getAllUsers();
-                User us = rem_user.get(0);
-                current_user = us;
-                current_user_number = us.getId();
-                Intent intent = new Intent(context, MainActivity.class);
-                startActivity(intent);
-        }
-
         findViewById(R.id.logbutton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
