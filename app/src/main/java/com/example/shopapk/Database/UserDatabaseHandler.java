@@ -83,6 +83,22 @@ public class UserDatabaseHandler extends SQLiteOpenHelper {
         return userList;
     }
 
+    public boolean checkIfUserExists(User user)
+    {
+        boolean empty = true;
+
+        String selectQeury = "SELECT COUNT(*) FROM " + TABLE_PRODUCTS + " WHERE " + KEY_LOGIN + " = " + user.getUsername();
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cur = db.rawQuery(selectQeury, null);
+
+        if (cur != null && cur.moveToFirst()) {
+            empty = (cur.getInt (0) == 0);
+        }
+        cur.close();
+
+        return empty;
+    }
+
     public int updateUser(User user) {
         SQLiteDatabase db = this.getWritableDatabase();
 
