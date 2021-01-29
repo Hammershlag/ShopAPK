@@ -3,6 +3,7 @@ package com.example.shopapk.Activities.Settings;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.shopapk.Activities.LoginActivity;
@@ -12,6 +13,7 @@ import com.example.shopapk.Database.CurrentUserDatabaseHandler;
 import com.example.shopapk.R;
 
 import java.util.List;
+import java.util.Timer;
 
 import static com.example.shopapk.Data.Data.*;
 import static com.example.shopapk.Data.Data.current_user_number;
@@ -27,16 +29,11 @@ public class LoadingScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loading_screen_activity);
 
+        Handler mHandler = new Handler();
+        mHandler.postDelayed(new Runnable() {
 
-//        try {
-//            Thread.sleep(5000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-
-        findViewById(R.id.loadScreenButtonTest).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void run() {
                 if (!cdb.isEmpty())
                 {
                     check_log = true;
@@ -55,7 +52,7 @@ public class LoadingScreenActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             }
-        });
 
+        }, 5000L);
     }
 }
