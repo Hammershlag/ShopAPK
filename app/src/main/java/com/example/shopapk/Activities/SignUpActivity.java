@@ -2,6 +2,7 @@ package com.example.shopapk.Activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -82,4 +83,5 @@ public class SignUpActivity extends AppCompatActivity {
         });
 
     }
+
 }

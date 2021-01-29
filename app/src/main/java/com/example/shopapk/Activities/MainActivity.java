@@ -70,17 +70,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
             if (!user_check)
                 idb.addUser(new UserInfo(user.getId(), user.getUsername(), "You didn't enter", "You didn't enter", "You didn't enter"));
         }
-        if (!cdb.isEmpty())
-        {
-            check_log = true;
-            count++;
-            List<User> rem_user = cdb.getAllUsers();
-            cdb.getAllUsers();
-            User us = rem_user.get(0);
-            current_user = us;
-            current_user_number = us.getId();
 
-        }
 
         if (count == 0) {
             Intent intent = new Intent(context, LoginActivity.class);

@@ -82,12 +82,20 @@ public class UserDatabaseHandler extends SQLiteOpenHelper {
 
         return userList;
     }
+    public int getUsersCount() {
+        String countQuery = "SELECT  * FROM " + TABLE_PRODUCTS;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        cursor.close();
+
+        return cursor.getCount();
+    }
 
     public boolean checkIfUserExists(User user)
     {
         boolean empty = true;
 
-        String selectQeury = "SELECT COUNT(*) FROM " + TABLE_PRODUCTS + " WHERE " + KEY_LOGIN + " = " + user.getUsername();
+        String selectQeury = "SELECT " + KEY_LOGIN + " FROM " + TABLE_PRODUCTS + " WHERE " + KEY_LOGIN + " = \'" + user.getUsername() + " /'";
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cur = db.rawQuery(selectQeury, null);
 
@@ -117,14 +125,7 @@ public class UserDatabaseHandler extends SQLiteOpenHelper {
         db.close();
     }
 
-    public int getUsersCount() {
-        String countQuery = "SELECT  * FROM " + TABLE_PRODUCTS;
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery(countQuery, null);
-        cursor.close();
 
-        return cursor.getCount();
-    }
     public boolean isEmpty() {
         SQLiteDatabase db = this.getReadableDatabase();
         boolean empty = true;
