@@ -38,8 +38,7 @@ public class AdminActivity extends AppCompatActivity {
                     List<Product> products = db.getAllProducts();
                     for (Product pr: products)
                     {
-                        if (pr.getName().equals(name.getText().toString()) && pr.getDescription().equals(description.getText().toString()))
-                        {
+                        if (pr.getName().equals(name.getText().toString()) && pr.getDescription().equals(description.getText().toString())) {
                             check = false;
                             Toast toast = Toast.makeText(AdminActivity.this, "Item already exists", 10);
                             toast.show();

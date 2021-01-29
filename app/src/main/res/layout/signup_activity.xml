@@ -2,12 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@color/backgroundColor"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
     <TextView
             android:text="Sign Up"
+            android:textColor="@color/textColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/signuptext"
@@ -17,6 +19,7 @@
             android:layout_marginStart="8dp"/>
     <TextView
             android:text="Email"
+            android:textColor="@color/textColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/emailtext2"
@@ -26,7 +29,9 @@
             android:layout_marginStart="8dp"/>
     <EditText
             android:layout_width="wrap_content"
+            android:textColor="@color/textColor"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/textColor"
             android:inputType="textEmailAddress"
             android:ems="10"
             android:id="@+id/emailtextfield2"
@@ -36,6 +41,7 @@
             android:layout_marginStart="8dp"/>
     <TextView
             android:text="Password"
+            android:textColor="@color/textColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/passtext"
@@ -45,7 +51,9 @@
             android:layout_marginStart="8dp"/>
     <EditText
             android:layout_width="wrap_content"
+            android:textColor="@color/textColor"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/textColor"
             android:inputType="textPassword"
             android:ems="10"
             android:id="@+id/passEntry"
@@ -55,6 +63,7 @@
             android:layout_marginStart="8dp"/>
     <TextView
             android:text="Confirm Password"
+            android:textColor="@color/textColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/passConfirmation"
@@ -64,16 +73,19 @@
             android:layout_marginStart="8dp"/>
     <EditText
             android:layout_width="wrap_content"
+            android:textColor="@color/textColor"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:ems="10"
             android:id="@+id/passConfirmationField"
+            android:backgroundTint="@color/textColor"
             app:layout_constraintTop_toBottomOf="@+id/passConfirmation"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="16dp"
             android:layout_marginStart="8dp"/>
     <CheckBox
             android:text="I accept all the regulations"
+            android:textColor="@color/textColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/regulations"

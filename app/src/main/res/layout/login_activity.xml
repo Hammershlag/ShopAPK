@@ -3,10 +3,12 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
+        android:background="@color/backgroundColor"
         android:layout_height="match_parent">
 
     <TextView
             android:text="Login"
+            android:textColor="@color/textColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/loginText"
@@ -15,6 +17,7 @@
             android:layout_marginTop="44dp"/>
     <TextView
             android:text="E-Mail"
+            android:textColor="@color/textColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/emailText"
@@ -23,8 +26,10 @@
             android:layout_marginTop="60dp"/>
     <EditText
             android:layout_width="wrap_content"
+            android:textColor="@color/textColor"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
+            android:backgroundTint="@color/textColor"
             android:ems="10"
             android:id="@+id/emailFieldLog"
             app:layout_constraintStart_toStartOf="parent"
@@ -32,6 +37,7 @@
     <TextView
             android:text="Password"
             android:layout_width="wrap_content"
+            android:textColor="@color/textColor"
             android:layout_height="wrap_content"
             android:id="@+id/passwordFieldText"
             app:layout_constraintStart_toStartOf="parent"
@@ -40,7 +46,9 @@
             android:layout_marginStart="4dp"/>
     <EditText
             android:layout_width="wrap_content"
+            android:textColor="@color/textColor"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/textColor"
             android:inputType="textPassword"
             android:ems="10"
             android:id="@+id/passwordFieldLog"
@@ -66,6 +74,7 @@
             android:layout_marginBottom="16dp"/>
     <CheckBox
             android:text="Remember Password"
+            android:textColor="@color/textColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/rem_pass"
             app:layout_constraintTop_toBottomOf="@+id/passwordFieldLog" app:layout_constraintStart_toStartOf="parent"

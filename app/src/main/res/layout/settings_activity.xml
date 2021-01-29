@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   android:background="@color/backgroundColor"
                                                    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
                                                    android:layout_height="match_parent">
 
     <Switch
             android:text="Dark mode"
+            android:textColor="@color/textColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/dark_mode_settings"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="16dp" android:layout_marginStart="16dp"/>
+            android:layout_marginTop="208dp" android:layout_marginStart="8dp"/>
     <Button
             android:text="Change Password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/changepasswordbutton"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="16dp" app:layout_constraintTop_toBottomOf="@+id/dark_mode_settings"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginStart="8dp" app:layout_constraintTop_toBottomOf="@+id/dark_mode_settings"
+            android:layout_marginTop="104dp"/>
     <Button
             android:text="User Info"
             android:layout_width="wrap_content"
@@ -25,6 +27,20 @@
             android:id="@+id/userinfobutton"
             app:layout_constraintTop_toBottomOf="@+id/changepasswordbutton"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="100dp"/>
+    <Button
+            android:text="Change user info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/change_user_info"
+            app:layout_constraintTop_toBottomOf="@+id/userinfobutton" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="128dp" android:layout_marginStart="16dp"/>
+    <Button
+            android:text="Back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/back_button_settings"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/dark_mode_settings"
+            app:layout_constraintVertical_bias="0.491" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="20dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

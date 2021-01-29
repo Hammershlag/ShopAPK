@@ -2,6 +2,7 @@ package com.example.shopapk.Activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.location.*;
 import android.location.Location;
 import android.os.Bundle;
@@ -12,14 +13,17 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.shopapk.Activities.Admin.AdminActivity;
 import com.example.shopapk.Activities.Settings.SettingsActivity;
-import com.example.shopapk.Classes.Product;
 import com.example.shopapk.Classes.User;
+import com.example.shopapk.Classes.UserInfo;
 import com.example.shopapk.Database.CurrentUserDatabaseHandler;
+import com.example.shopapk.Database.UserDatabaseHandler;
+import com.example.shopapk.Database.UserInfoDatabaseHandler;
 import com.example.shopapk.R;
 import com.here.android.mpa.common.*;
 import com.here.android.mpa.mapping.*;
 
 import java.io.IOException;
+import java.nio.channels.FileChannel;
 import java.util.List;
 import java.util.Locale;
 
@@ -37,12 +41,34 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     final Context context = this;
     GeoCoordinate geoCoordinate;
     CurrentUserDatabaseHandler cdb = new CurrentUserDatabaseHandler(this);
+    UserDatabaseHandler udb = new UserDatabaseHandler(this);
+    UserInfoDatabaseHandler idb = new UserInfoDatabaseHandler(this);
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if (udb.isEmpty())
+        {
+            udb.addUser(new User("admin", "admin"));
+        }
+        List<User> users = udb.getAllUsers();
+        List<UserInfo> usersInfo = idb.getAllUsers();
+        for (User user : users)
+        {
+            boolean user_check = false;
+            for (UserInfo uinfo : usersInfo) {
+                if (uinfo.getUsername().equals(user.getUsername()))
+                {
+                    user_check = true;
+                }
+
+            }
+            if (!user_check)
+                idb.addUser(new UserInfo(user.getId(), user.getUsername(), "You didn't enter", "You didn't enter", "You didn't enter"));
+        }
 
 
         if (count == 0) {
@@ -68,7 +94,6 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                     OnEngineInitListener.Error error) {
                 if (error == OnEngineInitListener.Error.NONE) {
                     map = mapFragment.getMap();
-
 
                     getAddress(context, lat, lon, txtLat);
 
