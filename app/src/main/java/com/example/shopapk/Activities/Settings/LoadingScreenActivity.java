@@ -29,6 +29,12 @@ public class LoadingScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loading_screen_activity);
 
+        if (!darkModeCheck)
+        {
+            Intent intent = new Intent(context, SettingsActivity.class);
+            startActivity(intent);
+        }
+
         Handler mHandler = new Handler();
         mHandler.postDelayed(new Runnable() {
 
@@ -54,6 +60,5 @@ public class LoadingScreenActivity extends AppCompatActivity {
             }
 
         }, 5000L);
-        //jygklihli
     }
 }

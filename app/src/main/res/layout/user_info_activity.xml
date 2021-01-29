@@ -2,11 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                                    xmlns:app="http://schemas.android.com/apk/res-auto"
                                                    xmlns:tools="http://schemas.android.com/tools"
+                                                   android:background="@color/backgroundColor"
                                                    android:layout_width="match_parent"
                                                    android:layout_height="match_parent">
 
     <TextView
             android:text="Email:"
+            android:textColor="@color/textColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/emailTextInfo"
@@ -14,6 +16,7 @@
             android:layout_marginTop="16dp" android:layout_marginStart="16dp"/>
     <TextView
             android:text="userinfoemail"
+            android:textColor="@color/textColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/userinfoemail"
@@ -21,6 +24,7 @@
             android:layout_marginStart="16dp" android:layout_marginTop="16dp"/>
     <TextView
             android:text="Password:"
+            android:textColor="@color/textColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/userinfopasswordtext"
@@ -28,6 +32,7 @@
             android:layout_marginTop="24dp" android:layout_marginStart="12dp"/>
     <TextView
             android:text="passwordinfo"
+            android:textColor="@color/textColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/userinfopassword"
@@ -36,6 +41,7 @@
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"/>
     <TextView
             android:text="Name:"
+            android:textColor="@color/textColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/Name"
             app:layout_constraintTop_toBottomOf="@+id/view_password"
@@ -43,12 +49,14 @@
             android:layout_marginStart="16dp"/>
     <TextView
             android:text="NameInfo"
+            android:textColor="@color/textColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/NameInfo"
             app:layout_constraintTop_toBottomOf="@+id/Name" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="20dp" android:layout_marginStart="16dp"/>
     <TextView
             android:text="Surname:"
+            android:textColor="@color/textColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/Surname"
             app:layout_constraintTop_toBottomOf="@+id/NameInfo"
@@ -56,6 +64,7 @@
             android:layout_marginStart="16dp"/>
     <TextView
             android:text="SurnameInfo"
+            android:textColor="@color/textColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/SurnameInfo"
             app:layout_constraintTop_toBottomOf="@+id/Surname"
@@ -63,6 +72,7 @@
             android:layout_marginStart="16dp"/>
     <TextView
             android:text="Phone Number:"
+            android:textColor="@color/textColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/PH_number"
             app:layout_constraintTop_toBottomOf="@+id/SurnameInfo"
@@ -70,12 +80,14 @@
             android:layout_marginStart="16dp"/>
     <TextView
             android:text="Phone_Number_InfoS"
+            android:textColor="@color/textColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/PH_Info"
             app:layout_constraintTop_toBottomOf="@+id/PH_number" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="20dp" android:layout_marginStart="16dp"/>
     <CheckBox
             android:text="View Password"
+            android:textColor="@color/textColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/view_password"
             app:layout_constraintTop_toBottomOf="@+id/userinfopassword" app:layout_constraintStart_toStartOf="parent"

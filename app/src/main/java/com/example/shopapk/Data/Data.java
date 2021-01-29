@@ -17,6 +17,8 @@ public class Data{
     public static String adres;
     public static int ctr = 0;
     public static boolean check_log = false;
+    public static boolean darkModeCheck = false;
+    public static boolean is_Dark_Mode_On = false;
 
 
     public static boolean isValidEmail(String email) {

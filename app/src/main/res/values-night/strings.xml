@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ShopAPK</string>
+    <string name="hello_world">Looking for location...</string>
+</resources>
