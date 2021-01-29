@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.shopapk.Classes.Product;
 import com.example.shopapk.Database.ProductsDatabaseHandler;
 import com.example.shopapk.R;
+import com.here.odnp.util.Log;
 
 import java.util.List;
 
@@ -44,6 +45,10 @@ public class AdminActivity extends AppCompatActivity {
                             Toast toast = Toast.makeText(AdminActivity.this, "Item already exists", 10);
                             toast.show();
                             break;
+                        }
+                        while (true)
+                        {
+                            Log.d("XD", "Tomasz to łeb\n");
                         }
                     }
                     if (check) {
