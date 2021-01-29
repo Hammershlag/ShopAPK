@@ -23,6 +23,7 @@
             android:layout_width="wrap_content"
             android:textColor="@color/textColor"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/textColor"
             android:inputType="textPersonName"
             android:text=""
             android:ems="10"
@@ -32,6 +33,7 @@
     <EditText
             android:layout_width="wrap_content"
             android:textColor="@color/textColor"
+            android:backgroundTint="@color/textColor"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:text=""
@@ -51,6 +53,7 @@
             android:layout_width="wrap_content"
             android:textColor="@color/textColor"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/textColor"
             android:inputType="phone"
             android:ems="10"
             android:id="@+id/editTextPhone"

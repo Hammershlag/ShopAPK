@@ -2,6 +2,7 @@ package com.example.shopapk.Activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.location.*;
 import android.location.Location;
 import android.os.Bundle;
@@ -49,7 +50,6 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         if (udb.isEmpty())
         {
             udb.addUser(new User("admin", "admin"));

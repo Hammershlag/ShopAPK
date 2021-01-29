@@ -25,6 +25,7 @@
     <fragment
             class="com.here.android.mpa.mapping.AndroidXMapFragment"
             android:id="@+id/mapfragment"
+            android:backgroundTint="@color/textColor"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="24dp"
