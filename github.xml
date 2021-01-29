@@ -1,0 +1,11 @@
+<application>
+  <component name="GithubAccounts">
+    <account id="13c6c3aa-4b15-439f-be6d-7e2124147306" name="Hammershlag">
+      <server host="github.com" />
+    </account>
+  </component>
+  <component name="GithubSettings">
+    <option name="COPY_URL_GIST" value="true" />
+    <option name="PRIVATE_GIST" value="false" />
+  </component>
+</application>
