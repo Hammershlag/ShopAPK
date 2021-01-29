@@ -22,6 +22,7 @@ import com.here.android.mpa.common.*;
 import com.here.android.mpa.mapping.*;
 
 import java.io.IOException;
+import java.nio.channels.FileChannel;
 import java.util.List;
 import java.util.Locale;
 
@@ -94,7 +95,6 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                 if (error == OnEngineInitListener.Error.NONE) {
                     map = mapFragment.getMap();
 
-
                     getAddress(context, lat, lon, txtLat);
 
                     defaultMarker = new MapMarker();
@@ -118,7 +118,6 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
             }
 
         });
-
 
         findViewById(R.id.reqlocation).setOnClickListener(new View.OnClickListener() {
             @Override
