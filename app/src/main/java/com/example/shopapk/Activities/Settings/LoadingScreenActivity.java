@@ -65,6 +65,7 @@ public class LoadingScreenActivity extends AppCompatActivity {
                 }
 
             }, 5000L);
+            //laksdm
         }
     }
 }
