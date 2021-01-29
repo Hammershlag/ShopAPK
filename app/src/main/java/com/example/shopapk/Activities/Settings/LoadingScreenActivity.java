@@ -4,10 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.shopapk.Activities.LoginActivity;
 import com.example.shopapk.Activities.MainActivity;
+import com.example.shopapk.Activities.SignUpActivity;
 import com.example.shopapk.Classes.User;
 import com.example.shopapk.Database.CurrentUserDatabaseHandler;
 import com.example.shopapk.R;
@@ -34,31 +37,34 @@ public class LoadingScreenActivity extends AppCompatActivity {
             Intent intent = new Intent(context, SettingsActivity.class);
             startActivity(intent);
         }
-
-        Handler mHandler = new Handler();
-        mHandler.postDelayed(new Runnable() {
-
-            @Override
-            public void run() {
-                if (!cdb.isEmpty())
-                {
-                    check_log = true;
-                    count++;
-                    List<User> rem_user = cdb.getAllUsers();
-                    cdb.getAllUsers();
-                    User us = rem_user.get(0);
-                    current_user = us;
-                    current_user_number = us.getId();
-                    Intent intent = new Intent(context, MainActivity.class);
-                    startActivity(intent);
-                }
-                else
-                {
-                    Intent intent = new Intent(context, LoginActivity.class);
-                    startActivity(intent);
-                }
+        else {
+            if (is_Dark_Mode_On)
+            {
+                Toast toast = Toast.makeText(LoadingScreenActivity.this, "WARNING \n Map is in light theme", 10);
+                toast.show();
             }
+            Handler mHandler = new Handler();
+            mHandler.postDelayed(new Runnable() {
 
-        }, 5000L);
+                @Override
+                public void run() {
+                    if (!cdb.isEmpty()) {
+                        check_log = true;
+                        count++;
+                        List<User> rem_user = cdb.getAllUsers();
+                        cdb.getAllUsers();
+                        User us = rem_user.get(0);
+                        current_user = us;
+                        current_user_number = us.getId();
+                        Intent intent = new Intent(context, MainActivity.class);
+                        startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(context, LoginActivity.class);
+                        startActivity(intent);
+                    }
+                }
+
+            }, 5000L);
+        }
     }
 }
