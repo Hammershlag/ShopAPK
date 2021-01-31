@@ -2,7 +2,6 @@ package com.example.shopapk.Activities;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.location.*;
 import android.location.Location;
 import android.os.Bundle;
@@ -12,6 +11,7 @@ import android.view.View;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.shopapk.Activities.Admin.AdminActivity;
+import com.example.shopapk.Activities.Login.LoginActivity;
 import com.example.shopapk.Activities.Settings.SettingsActivity;
 import com.example.shopapk.Classes.User;
 import com.example.shopapk.Classes.UserInfo;
@@ -23,7 +23,6 @@ import com.here.android.mpa.common.*;
 import com.here.android.mpa.mapping.*;
 
 import java.io.IOException;
-import java.nio.channels.FileChannel;
 import java.util.List;
 import java.util.Locale;
 

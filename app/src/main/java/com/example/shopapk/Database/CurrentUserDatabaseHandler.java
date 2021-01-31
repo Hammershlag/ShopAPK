@@ -1,19 +1,16 @@
 package com.example.shopapk.Database;
 
-import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.icu.math.BigDecimal;
-import android.os.Build;
-import androidx.annotation.RequiresApi;
-import com.example.shopapk.Classes.Product;
 import com.example.shopapk.Classes.User;
 
 import java.util.ArrayList;
 import java.util.List;
+
+// local
 
 public class CurrentUserDatabaseHandler extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;

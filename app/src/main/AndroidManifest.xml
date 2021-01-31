@@ -22,10 +22,10 @@
                     android:name="com.example.shopapk.Activities.MainActivity">
         </activity>
         <activity
-                android:name=".Activities.LoginActivity">
+                android:name=".Activities.Login.LoginActivity">
         </activity>
         <activity
-                android:name=".Activities.SignUpActivity">
+                android:name=".Activities.Login.SignUpActivity">
         </activity>
         <activity
                 android:name=".Activities.Settings.SettingsActivity">

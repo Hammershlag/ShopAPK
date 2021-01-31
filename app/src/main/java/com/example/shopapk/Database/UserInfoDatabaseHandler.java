@@ -10,6 +10,9 @@ import com.example.shopapk.Classes.UserInfo;
 import java.util.ArrayList;
 import java.util.List;
 
+// remote
+// to merge
+
 public class UserInfoDatabaseHandler extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "infoManager";
