@@ -1,11 +1,7 @@
 package com.example.shopapk.Data;
 
-import com.example.shopapk.Classes.Product;
 import com.example.shopapk.Classes.User;
 import com.here.android.mpa.common.GeoCoordinate;
-
-import java.util.Arrays;
-
 
 public class Data{
     public static double lat = 0.0;

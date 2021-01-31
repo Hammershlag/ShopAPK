@@ -4,19 +4,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.Gravity;
-import android.view.View;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.shopapk.Activities.LoginActivity;
+import com.example.shopapk.Activities.Login.LoginActivity;
 import com.example.shopapk.Activities.MainActivity;
-import com.example.shopapk.Activities.SignUpActivity;
 import com.example.shopapk.Classes.User;
 import com.example.shopapk.Database.CurrentUserDatabaseHandler;
 import com.example.shopapk.R;
 
 import java.util.List;
-import java.util.Timer;
 
 import static com.example.shopapk.Data.Data.*;
 import static com.example.shopapk.Data.Data.current_user_number;
@@ -65,7 +61,6 @@ public class LoadingScreenActivity extends AppCompatActivity {
                 }
 
             }, 5000L);
-            //laksdm
         }
     }
 }

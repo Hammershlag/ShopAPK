@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.shopapk.Activities.LoginActivity;
+import com.example.shopapk.Activities.Login.LoginActivity;
 import com.example.shopapk.R;
 
 import static com.example.shopapk.Data.Data.*;

@@ -10,6 +10,9 @@ import com.example.shopapk.Classes.Product;
 import java.util.ArrayList;
 import java.util.List;
 
+// remote
+// to merge
+
 public class ProductsDatabaseHandler extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "productsManager";
