@@ -20,6 +20,7 @@ public class ProductsDatabaseHandler extends SQLiteOpenHelper {
     private static final String KEY_ID = "id";
     private static final String KEY_NAME = "name";
     private static final String KEY_DES = "description";
+    private static final String KEY_PRICE = "price";
 
     public ProductsDatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -29,7 +30,7 @@ public class ProductsDatabaseHandler extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String CREATE_PRODUCTS_TABLE = "CREATE TABLE " + TABLE_PRODUCTS + "("
                 + KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME + " TEXT,"
-                + KEY_DES + " TEXT" + ")";
+                + KEY_DES + " TEXT, " + KEY_PRICE + " REAL "+")";
         db.execSQL(CREATE_PRODUCTS_TABLE);
     }
 
@@ -46,6 +47,7 @@ public class ProductsDatabaseHandler extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(KEY_NAME, product.getName());
         values.put(KEY_DES, product.getDescription());
+        values.put(KEY_PRICE, product.getPrice());
 
         db.insert(TABLE_PRODUCTS, null, values);
         db.close();
@@ -61,7 +63,7 @@ public class ProductsDatabaseHandler extends SQLiteOpenHelper {
             cursor.moveToFirst();
 
         Product product = new Product(Integer.parseInt(cursor.getString(0)),
-                cursor.getString(1), cursor.getString(2));
+                cursor.getString(1), cursor.getString(2), Float.parseFloat(cursor.getString(3)));
         return product;
     }
 
@@ -79,6 +81,7 @@ public class ProductsDatabaseHandler extends SQLiteOpenHelper {
                 product.setId(Integer.parseInt(cursor.getString(0)));
                 product.setName(cursor.getString(1));
                 product.setDescription(cursor.getString(2));
+                product.setPrice(Float.parseFloat(cursor.getString(3)));
                 productList.add(product);
             } while (cursor.moveToNext());
         }
@@ -92,6 +95,7 @@ public class ProductsDatabaseHandler extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(KEY_NAME, product.getName());
         values.put(KEY_DES, product.getDescription());
+        values.put(KEY_PRICE, product.getPrice());
 
         return db.update(TABLE_PRODUCTS, values, KEY_ID + " = ?",
                 new String[] { String.valueOf(product.getId()) });

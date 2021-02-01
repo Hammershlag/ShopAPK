@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/addproductbuttonnd"
             app:layout_constraintTop_toBottomOf="@+id/productdescriptionedit"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="56dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="124dp"
             android:layout_marginStart="16dp"/>
     <TextView
             android:text="TextView"
@@ -83,7 +83,7 @@
             android:layout_width="161dp"
             android:layout_height="47dp" android:id="@+id/remove_product"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="340dp" android:layout_marginEnd="28dp"/>
+            android:layout_marginTop="432dp" android:layout_marginEnd="20dp"/>
     <Button
             android:text="List"
             android:layout_width="wrap_content"
@@ -98,4 +98,21 @@
             app:layout_constraintTop_toBottomOf="@+id/addproductbuttonnd"
             app:layout_constraintEnd_toStartOf="@+id/pr_list" android:layout_marginTop="108dp"
             android:layout_marginEnd="56dp"/>
+    <TextView
+            android:text="Product Price:"
+            android:textColor="@color/textColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/pr_price_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/productdescriptionedit" android:layout_marginTop="24dp"
+            android:layout_marginStart="16dp"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Price"
+            android:ems="10"
+            android:id="@+id/pr_price_edit"
+            app:layout_constraintTop_toBottomOf="@+id/pr_price_text" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp" android:layout_marginStart="16dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
