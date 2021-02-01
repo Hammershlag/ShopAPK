@@ -67,7 +67,7 @@ public class ProductListActivity extends AppCompatActivity {
         try {
             adapter_title = new SimpleAdapter(this, mylist_title, R.layout.row,
                     new String[] { "slno", "one", "two", "three" }, new int[] {
-                    R.id.Slno, R.id.one, R.id.two });
+                    R.id.Slno, R.id.one, R.id.two, R.id.three });
             list_head.setAdapter(adapter_title);
         } catch (Exception e) {
 
