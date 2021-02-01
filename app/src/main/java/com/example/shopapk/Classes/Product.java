@@ -4,19 +4,22 @@ public class Product {
 
     private String _name, _description;
     private int _id;
+    private float price;
 
     public Product() {}
-    public Product(int id, String name, String description)
+    public Product(int id, String name, String description, float price)
     {
         this._name = name;
         this._id = id;
         this._description = description;
+        this.price = price;
     }
 
-    public Product(String name, String description)
+    public Product(String name, String description, float price)
     {
         this._name = name;
         this._description = description;
+        this.price = price;
     }
 
     public String getName() {
@@ -41,5 +44,15 @@ public class Product {
 
     public void setDescription(String description) {
         this._description = description;
+    }
+
+    public void setPrice(float price)
+    {
+        this.price = price;
+    }
+
+    public float getPrice()
+    {
+        return price;
     }
 }

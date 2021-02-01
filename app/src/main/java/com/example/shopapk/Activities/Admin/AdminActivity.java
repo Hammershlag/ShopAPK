@@ -32,6 +32,7 @@ public class AdminActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     EditText name = findViewById(R.id.createProductEdit);
                     EditText description = findViewById(R.id.productdescriptionedit);
+                    EditText price = findViewById(R.id.pr_price_edit);
                     boolean check = true;
 
                     Log.d("Reading: ", "Reading all products..");
@@ -46,7 +47,7 @@ public class AdminActivity extends AppCompatActivity {
                         }
                     }
                     if (check) {
-                        db.addProduct(new Product(name.getText().toString(), description.getText().toString()));
+                        db.addProduct(new Product(name.getText().toString(), description.getText().toString(), Float.parseFloat(price.getText().toString())));
                         test.setText(name.getText());
                         test2.setText(description.getText());
                     }
@@ -88,7 +89,7 @@ public class AdminActivity extends AppCompatActivity {
                     products = db.getAllProducts();
                     for (Product pr : products) {
                         String log = "Id: " + pr.getId() + " ,Name: " + pr.getName() + " ,Description: " +
-                                pr.getDescription();
+                                pr.getDescription() + ", Price: " + pr.getPrice();
                         Log.d("Name: ", log);
                     }
                 }

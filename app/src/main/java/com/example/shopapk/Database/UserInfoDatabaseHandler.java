@@ -70,6 +70,7 @@ public class UserInfoDatabaseHandler extends SQLiteOpenHelper {
 
         UserInfo user = new UserInfo(Integer.parseInt(cursor.getString(0)),
                 cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4));
+        db.close();
         return user;
     }
 
@@ -91,7 +92,7 @@ public class UserInfoDatabaseHandler extends SQLiteOpenHelper {
                 userList.add(user);
             } while (cursor.moveToNext());
         }
-
+        db.close();
         return userList;
     }
 
@@ -102,7 +103,7 @@ public class UserInfoDatabaseHandler extends SQLiteOpenHelper {
         db.execSQL(updateQuery);
     }
 
-    public void updateSurame(UserInfo user, String surname)
+    public void updateSurname(UserInfo user, String surname)
     {
         SQLiteDatabase db = this.getReadableDatabase();
         String updateQuery = "UPDATE " + TABLE_PRODUCTS + " SET " + KEY_SURNAME + " = \' " + surname + " \' WHERE ID = " + user.getId() +" ;";

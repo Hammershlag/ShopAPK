@@ -21,6 +21,7 @@ public class ProductListActivity extends AppCompatActivity {
     String[] pr_name = new String[100000];
     String[] pr_des = new String[100000];
     String[] pr_id = new String[100000];
+    String[] pr_pr = new String[100000];
     final ProductsDatabaseHandler db = new ProductsDatabaseHandler(this);
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,8 @@ public class ProductListActivity extends AppCompatActivity {
             pr_name[nr] = pr.getName();
             pr_des[nr] = pr.getDescription();
             pr_id[nr] = String.valueOf(pr.getId());
+            pr_pr[nr] = String.valueOf(pr.getPrice());
+
             nr++;
         }
         list = findViewById(R.id.listView2);
@@ -56,14 +59,15 @@ public class ProductListActivity extends AppCompatActivity {
         map1.put("slno", "DB ID");
         map1.put("one", " Name");
         map1.put("two", " Description");
+        map1.put("three", "Price");
         mylist_title.add(map1);
 
 
 
         try {
             adapter_title = new SimpleAdapter(this, mylist_title, R.layout.row,
-                    new String[] { "slno", "one", "two" }, new int[] {
-                    R.id.Slno, R.id.one, R.id.two });
+                    new String[] { "slno", "one", "two", "three" }, new int[] {
+                    R.id.Slno, R.id.one, R.id.two, R.id.three });
             list_head.setAdapter(adapter_title);
         } catch (Exception e) {
 
@@ -75,14 +79,15 @@ public class ProductListActivity extends AppCompatActivity {
             map2.put("slno", pr_id[i]);
             map2.put("one", pr_name[i]);
             map2.put("two", pr_des[i]);
+            map2.put("three", pr_pr[i]);
             mylist.add(map2);
         }
 
 
         try {
             adapter = new SimpleAdapter(this, mylist, R.layout.row,
-                    new String[] { "slno", "one", "two" }, new int[] {
-                    R.id.Slno, R.id.one, R.id.two });
+                    new String[] { "slno", "one", "two", "three" }, new int[] {
+                    R.id.Slno, R.id.one, R.id.two, R.id.three });
             list.setAdapter(adapter);
         } catch (Exception e) {
 

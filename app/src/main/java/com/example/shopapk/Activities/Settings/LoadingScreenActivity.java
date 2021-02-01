@@ -4,11 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.shopapk.Activities.Login.LoginActivity;
 import com.example.shopapk.Activities.MainActivity;
 import com.example.shopapk.Classes.User;
+import com.example.shopapk.Data.Data;
 import com.example.shopapk.Database.CurrentUserDatabaseHandler;
 import com.example.shopapk.R;
 
@@ -59,8 +61,8 @@ public class LoadingScreenActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                 }
-
             }, 5000L);
         }
+        Log.d("Random String:",Data.randomString());
     }
 }

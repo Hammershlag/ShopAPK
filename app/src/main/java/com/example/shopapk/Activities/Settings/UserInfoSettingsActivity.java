@@ -36,7 +36,7 @@ public class UserInfoSettingsActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                     udb.updateName(udb.getUser(current_user_number), name.getText().toString().trim());
-                    udb.updateSurame(udb.getUser(current_user_number), surname.getText().toString().trim());
+                    udb.updateSurname(udb.getUser(current_user_number), surname.getText().toString().trim());
                     udb.updatePhoneNumber(udb.getUser(current_user_number), phone_number.getText().toString().trim());
 
                 Intent intent = new Intent(context, SettingsActivity.class);
